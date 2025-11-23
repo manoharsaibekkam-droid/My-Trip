@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Packages</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #eef2f3;
+    }
+
+    header {
+      background: #0077b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .packages-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      padding: 40px;
+    }
+
+    .package-card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .package-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .package-card h3 {
+      margin: 0;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .price {
+      font-size: 20px;
+      color: #0077b6;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .desc {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      background: #0077b6;
+      color: white;
+      padding: 10px 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #005f86;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>Our Travel Packages</header>
+
+<div class="packages-container">
+
+  <!-- Goa -->
+  <div class="package-card">
+    <h3>Goa Beach Escape</h3>
+    <div class="price">₹12,999</div>
+    <p class="desc">
+      Experience the golden sandy beaches, vibrant nightlife, beach-front shacks, 
+      and breathtaking sunsets. A perfect getaway for relaxation, adventure, and fun.
+    </p>
+    <a href="payments.html?price=12999&package=Goa Beach Escape" class="btn">Book Now</a>
+  </div>
+
+  <!-- Manali -->
+  <div class="package-card">
+    <h3>Manali Adventure Trip</h3>
+    <div class="price">₹18,499</div>
+    <p class="desc">
+      A paradise for thrill-seekers—enjoy paragliding, snow trekking, river rafting, and 
+      scenic views of the Himalayan peaks. Perfect for adventure lovers.
+    </p>
+    <a href="payments.html?price=18499&package=Manali Adventure Trip" class="btn">Book Now</a>
+  </div>
+
+  <!-- Rajasthan -->
+  <div class="package-card">
+    <h3>Rajasthan Royal Tour</h3>
+    <div class="price">₹15,999</div>
+    <p class="desc">
+      Walk through ancient forts, royal palaces, and majestic deserts. Experience camel rides, 
+      traditional Rajasthani culture, and heritage stays like never before.
+    </p>
+    <a href="payments.html?price=15999&package=Rajasthan Royal Tour" class="btn">Book Now</a>
+  </div>
+
+  <!-- Andaman -->
+  <div class="package-card">
+    <h3>Andaman Islands</h3>
+    <div class="price">₹25,999</div>
+    <p class="desc">
+      Escape to the turquoise waters, white sandy beaches, underwater diving spots, and 
+      peaceful islands. A dream destination for beach and nature lovers.
+    </p>
+    <a href="payments.html?price=25999&package=Andaman Islands" class="btn">Book Now</a>
+  </div>
+
+</div>
+
+</body>
+</html>

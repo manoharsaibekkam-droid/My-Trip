@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Gateway</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f4f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 450px;
+      margin: 40px auto;
+      padding: 25px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .success {
+      margin-top: 15px;
+      padding: 12px;
+      background: #d4f8d4;
+      color: #176317;
+      border-radius: 6px;
+      display: none;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>Complete Your Payment</h2>
+
+    <label>Package</label>
+    <input type="text" id="packageName" disabled>
+
+    <label>Amount</label>
+    <input type="text" id="amount" disabled>
+
+    <label>Select Payment Method</label>
+    <select id="paymentMethod">
+      <option value="">Choose Method</option>
+      <option value="card">Credit/Debit Card</option>
+      <option value="upi">UPI</option>
+      <option value="wallet">Wallet</option>
+    </select>
+
+    <button onclick="makePayment()">Pay Now</button>
+
+    <div class="success" id="successMsg">
+      ✔ Payment Successful!
+    </div>
+  </div>
+
+  <script>
+    // Get price and package from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const price = urlParams.get("price");
+    const packageName = urlParams.get("package");
+
+    // Set package name and amount
+    document.getElementById("packageName").value = packageName;
+    document.getElementById("amount").value = "₹" + price;
+
+    function makePayment() {
+      const method = document.getElementById("paymentMethod").value;
+      if (!method) {
+        alert("Please select a payment method!");
+        return;
+      }
+      document.getElementById("successMsg").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
